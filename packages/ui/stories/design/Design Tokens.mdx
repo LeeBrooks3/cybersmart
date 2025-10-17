@@ -1,0 +1,138 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Design Tokens" />
+
+# Design Tokens
+
+Design tokens are design decisions, translated into data. They act as a “source of truth” to help ensure that product experiences feel unified and cohesive.
+
+- [Introduction](#introduction)
+  - [Our system](#our-system)
+- [Types and terminology](#types-and-terminology)
+  - [Token](#token)
+  - [Value](#value)
+  - [Alias](#alias)
+  - [Component-specific token](#component-specific-token)
+  - [Global token](#global-token)
+- [Examples](#examples)
+  - [Size tokens](#size-tokens)
+  - [Color tokens](#color-tokens)
+  - [Layout tokens](#layout-tokens)
+- [Naming](#naming)
+  - [Principles](#principles)
+  - [Structure](#structure)
+  - [Examples](#examples)
+- [Usage guidelines](#usage-guidelines)
+  - [Using global tokens](#using-global-tokens)
+  - [Using aliases](#using-aliases)
+  - [Using component-specific tokens](#using-component-specific-tokens)
+- [Final notes](#final-notes)
+
+
+## Introduction
+
+Design tokens — or tokens, for short — are design decisions, translated into data. They’re ultimately a communication tool: a shared language between design and engineering for communicating detailed information about how to build user interfaces.
+
+Tokens consist of values needed to construct and maintain a design system, such as spacing, color, typography, object styles, animation, and more. They can represent anything that has a design definition, like a color as a RGB value, an opacity as a number, or an animation ease as Bezier coordinates. We use tokens instead of hard-coded values so Spectrum can scale and support the complex ways that Adobe products need to intersect as a cohesive ecosystem.
+
+### Our system
+
+Our design token system prioritizes predictability and flexibility. The overall methodology is to have a focused set of tokens rather than all possible tokens for all possible scenarios. However, it's important to note that tokens only provide some — if not most — of the information needed to represent or implement a UI component. The token system is one resource in Spectrum’s offerings rather than a complete knowledge set, and it’s used alongside design and engineering documentation.
+
+Design tokens are directly integrated into our component libraries, UI kits, and other resources. They cover the various options of platform scales, color themes, component states, and much more. We also offer a variety of token types for teams to use directly within their products if they're not using a Spectrum implementation.
+
+
+## Types and terminology
+
+Terminology is key to understanding Spectrum’s design tokens and the concepts behind the token system. There are foundational terms that describe how to use tokens, and how they relate to each other.
+
+### Token
+A design decision, represented as data. Each token has a carefully chosen name that communicates its intention and scope, and follows a set naming convention.
+
+### Value
+The data associated with the token name. This could either be another token (called an alias) or a final value (for example: RGBA colors, pixels, percentages).
+
+### Alias
+A token that references another token, instead of referencing a hard-coded value.
+
+### Component-specific token
+
+A token used for a particular component.
+
+### Global token
+
+A token used across the design system. This is the opposite of a [component-specific token](#component-specific-token).
+
+
+## Examples
+
+### Size tokens
+
+Many of Spectrum’s components use size tokens that follow a t-shirt sizing categorization convention (small, medium, large, extra-large). These are designed to offer a limited number of size options that follow a linear scale: for example, on desktop, each size increases or decreases by 8 px. Since they’re used together to create hierarchy, it’s important to have a limited amount of sizes that work well in combination.
+
+Specific components that need a wider range of sizing options use size tokens that follow a non-linear scale, where each increasing size is a multiple of the previous one. These are only for components that are frequently used inside of other components across a wide range of use cases — like avatars or thumbnails — and therefore require a more flexible range of sizes. They’re named with numerals because they’re not tied to specific t-shirt sizes.
+
+We use detailed specs as part of our token definition process. Here’s some examples of the specs for size tokens for the text field and avatar components:
+
+### Color tokens
+
+Spectrum has both global and alias color tokens. A global color token is written as a specific value that’s part of the color system. An alias color token is written as a particular usage.
+
+### Layout tokens
+
+Spectrum’s layout tokens cover all fundamentals, including object styles and spacing.
+
+
+## Naming
+
+Spectrum names design tokens very intentionally and strategically. This naming practice is part of the token system’s larger goals: to create a focused set of tokens, and to help more people understand and work with tokens in product design and development.
+
+### Principles
+
+- Human-readable. Our tokens are communication tools that humans need to be able to readily understand. They use language and terminology already existing within Spectrum, and values are written as descriptively as possible. We do this to support our diverse array of product stakeholders — not just designers and engineers — who have varying levels of familiarity with and comfort using design tokens.
+- Flat structure. We use a flat structure — not a nested or tree structure — so that we aren’t prioritizing a particular coding construct. This is also so that token names can have a narrative, conversational feel.
+- Predictable and flexible. We follow a token naming structure that maps to a natural language convention and uses a set vocabulary. This allows us to communicate complex information in a way that’s predictable but can accommodate new updates and changes in the design system.
+
+### Structure
+
+We use a 3-part structure for coming up with token names: context, common unit, and clarification. It’s based on a common model for human language and narrative-building where the information communicated becomes increasingly granular. Token names start with broad context, then go into more specific detail.
+
+### Examples
+
+Not all token names need to have context, common unit, and clarification together — but they all follow the same order. You can think of the most specific piece of information in the hierarchy as equated to the property to set. Here’s some examples:
+
+#### `gray-100`
+- _Gray_ is a color
+- `gray-100` is a more specific color, which points to a specific value in the Spectrum color system.
+
+#### `checkbox-control-size-small`
+- A _checkbox_ is a component, and the most high-level or broad concept
+- A _control_ is a common (consistent) unit; there are many different kinds of controls in the system
+- `control-size` is also a common unit because there is more than one component that includes a control, with a predetermined number of sizes
+- `small` is a particular size from a set of available sizes (t-shirt sizes), so it’s the most detailed information being communicated in the token name
+
+
+## Usage guidelines
+
+### Using global tokens
+
+Only use global tokens when there are no available aliases for your use case. Global tokens are easy to reference and are the building blocks of Spectrum, but they’re also the least tied to the logic of our design language.
+
+### Using aliases
+
+Alias tokens are the recommended type to use when building your product with design tokens. They’re a shared language for understanding Spectrum, and they help to associate meaning, context, and intent to the design tokens you’re applying to your product.
+
+Using aliases is a good way to ensure that your product can evolve alongside Spectrum as the design system evolves, and to minimize future maintenance for your product.
+
+### Using component-specific tokens
+
+When building Spectrum verified components, use component-specific tokens. This ensures that as a component’s design evolves, you won’t have to retrace any higher-level design decisions that informed the updates.
+
+It’s not recommended to use component-specific tokens interchangeably with other components, unless one is derivative of the other.
+
+
+## Final notes
+
+Spectrum tokens inform many other Spectrum resources. Adobe product teams don’t use the output of them directly, but instead use common UI frameworks, which includes the implementation of tokens into components.
+
+For more information, go to the README for the Spectrum tokens GitHub to find more detailed documentation about tokens, component schemas, the output JSON data model, and more. There’s also guides for getting started as well as guidelines on authoring and contribution.

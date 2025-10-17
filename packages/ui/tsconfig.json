@@ -1,0 +1,14 @@
+{
+  "extends": "@leebrooks3/typescript-config/react",
+  "include": [
+    ".storybook/**/*",
+    "components/**/*",
+    "icons/**/*",
+    "stories/**/*",
+    "index.tsx"
+  ],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
+  }
+}

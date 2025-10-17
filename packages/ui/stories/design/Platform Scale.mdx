@@ -1,0 +1,65 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Platform Scale" />
+
+# Platform scale
+
+Spectrum is designed for multiple platforms. There are two different scales for user interfaces in order to accommodate cursor and touch experiences: a desktop scale and a mobile scale.
+
+- [Principles](#principles)
+  - [Proportions](#proportions)
+  - [Borders](#borders)
+  - [Typography](#typography)
+  - [Iconography](#iconography)
+- [Choosing the correct scale](#choosing-the-correct-scale)
+  - [Scale by platform](#scale-by-platform)
+- [Areas and interactions](#areas-and-interactions)
+  - [Placement areas](#placement-areas)
+  - [Cursor hit areas](#cursor-hit-areas)
+  - [Touch hit areas](#touch-hit-areas)
+
+
+## Principles
+
+Designing for different scales requires finding a balance between platform best practices and design system consistency. Here are the ways to ensure that properties can accommodate to different environments while still sharing a common design language.
+
+### Proportions
+
+Mobile components are larger than their desktop counterparts. Spectrum uses a 1:1.25 scale ratio. This means that a mobile component is 25% larger than its desktop counterpart, and a desktop component is 20% smaller than its mobile counterpart.
+
+### Borders
+While the proportions of a component change between desktop and mobile scales, the border width remains the same at all times.
+
+Learn more at the Object styles page
+
+### Typography
+Spectrum defines two sets of font sizes, one for desktop and one for mobile. Text is shown larger in the mobile scale than in the desktop scale.
+
+Learn more at the Typography page
+
+### Iconography
+Spectrum provides two sets of icons, one for desktop and one for mobile, so that the same icon doesn’t need to be manually scaled. Icons appear larger on platforms that have touch experiences than on cursor experiences. Each set contains icons of different sizes such as small, medium, and large.
+
+Learn more at the Iconography page
+
+
+## Choosing the correct scale
+
+### Scale by platform
+
+Each platform and context require the use of an appropriate scale. Desktop platforms, like macOS, use the desktop scale. Mobile platforms, like iOS and Android, use the mobile scale. Other platforms that may blur the line between desktop and mobile experiences, such as a device with a touch-enabled desktop screen, should accommodate both scales. For example, UWP (Windows) should display the correct scale depending on the device, and web browsers should display the correct scale based on the width of the browser window.
+
+
+## Areas and interactions
+
+Desktop and mobile scales are both designed to handle cursor and touch interactions, but the primary interaction for the desktop scale is cursor-based while the primary interaction for the mobile scale is touch-based. Each component includes a set of areas: a placement area for layout purposes, one or more cursor hit areas for cursor interactions, and one or more touch hit areas for touch interactions. Components have only one placement area, but can have multiple hit areas as needed.
+
+### Placement areas
+
+Placement areas represent the boundaries of a component. These should be used to create layouts and build user interfaces.
+
+### Cursor hit areas
+Cursor hit area placements and sizes vary for each component. They can be identical to the placement area (e.g., button) or adjusted to a specific portion of a component (e.g., the field of a text field; the handle of a slider).
+
+### Touch hit areas
+Touch hit areas placements and sizes vary for each component. They try to respect a minimum width and height of 48 px whenever possible to ensure ease when trying to tap or hold.

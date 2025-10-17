@@ -1,0 +1,19 @@
+{
+  "name": "@leebrooks3/policies-api",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "ts-node server.ts"
+  },
+  "dependencies": {
+    "@effect/platform": "^0.92.1",
+    "@effect/platform-node": "^0.98.3",
+    "@leebrooks3/effect": "workspace:",
+    "effect": "^3.18.4"
+  },
+  "devDependencies": {
+    "@leebrooks3/eslint-config": "workspace:",
+    "@types/node": "^24.7.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

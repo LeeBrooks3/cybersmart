@@ -1,0 +1,15 @@
+.DS_Store
+
+node_modules/
+npm-debug.log*
+
+.env
+.env.*
+.envrc/*
+.docker/*
+.direnv/*
+.idea/*
+.sst/*
+.vscode/*
+
+*storybook.log

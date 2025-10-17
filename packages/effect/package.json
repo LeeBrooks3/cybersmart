@@ -1,0 +1,19 @@
+{
+  "name": "@leebrooks3/effect",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "effect": "catalog:",
+    "ulid": "^3.0.1"
+  },
+  "devDependencies": {
+    "@leebrooks3/eslint-config": "workspace:*",
+    "@leebrooks3/typescript-config": "workspace:*",
+    "@types/node": "^22",
+    "typescript": "^5",
+    "vitest": "^3.2.4"
+  }
+}

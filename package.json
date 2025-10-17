@@ -1,0 +1,18 @@
+{
+  "name": "@leebrooks3/workspace",
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev --prefix apps/policies-api",
+    "dev:app": "npm run dev --prefix apps/policies-web-app",
+    "dev:ui": "npm run storybook --prefix packages/ui"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.2",
+    "eslint": "^9.33.0",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,7 @@
+packages:
+  - apps/**
+  - packages/**
+  - stacks/**
+
+catalog:
+  "effect": "3.18.4"
